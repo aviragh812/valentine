@@ -4,8 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>My Forever Valentine ❤️</title>
+
 <link rel="icon" href="https://i.pinimg.com/736x/f5/6a/b5/f56ab54df5d03334f256d03ef3862bc6.jpg">
 
+<!-- WhatsApp Preview -->
 <meta property="og:title" content="My Forever Valentine ❤️">
 <meta property="og:description" content="A small surprise for you ❤️">
 <meta property="og:image" content="https://i.pinimg.com/736x/46/7f/ff/467fff2c11381655d7225016c3ccd433.jpg">
@@ -34,7 +36,6 @@ body{
     box-shadow:0 15px 40px rgba(255,77,109,.2);
     width:420px;
     text-align:center;
-    transition:.4s;
 }
 
 #display-img{
@@ -55,7 +56,6 @@ button{
     border:none;
     border-radius:40px;
     cursor:pointer;
-    transition:.25s;
 }
 
 #yesBtn{
@@ -98,11 +98,10 @@ button{
 
 .love-box h1{
     font-size:42px;
-    margin-bottom:10px;
     animation:glow 1.5s infinite alternate;
 }
 
-/* ✨ UPDATED LOVE MESSAGE STYLE */
+/* LOVE MESSAGE */
 .love-message{
     font-size:20px;
     font-weight:bold;
@@ -143,7 +142,7 @@ button{
     to{opacity:1; transform:scale(1);}
 }
 
-/* ---------- MOBILE RESPONSIVE ---------- */
+/* ---------- MOBILE ---------- */
 @media (max-width:600px){
 
     body{
@@ -240,22 +239,17 @@ function rejected(){
         img.src="https://i.pinimg.com/736x/e1/ef/e1/e1efe1c9baa6995b24ca20766ad81a81.jpg";
         text.innerText="NO is not allowed 😡";
 
-        noBtn.onmouseover=function(){
-            const x=Math.random()*(window.innerWidth-120);
-            const y=Math.random()*(window.innerHeight-120);
-            noBtn.style.position="fixed";
-            noBtn.style.left=x+"px";
-            noBtn.style.top=y+"px";
-        };
-
-        noBtn.ontouchstart=function(){
-            const x=Math.random()*(window.innerWidth-120);
-            const y=Math.random()*(window.innerHeight-120);
-            noBtn.style.position="fixed";
-            noBtn.style.left=x+"px";
-            noBtn.style.top=y+"px";
-        };
+        noBtn.onmouseover = moveNo;
+        noBtn.ontouchstart = moveNo;
     }
+}
+
+function moveNo(){
+    const x=Math.random()*(window.innerWidth-120);
+    const y=Math.random()*(window.innerHeight-120);
+    noBtn.style.position="fixed";
+    noBtn.style.left=x+"px";
+    noBtn.style.top=y+"px";
 }
 
 function createHeart(){
