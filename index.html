@@ -3,129 +3,272 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>My Forever Valentine ❤️</title>
 
-<!-- WhatsApp Preview Meta Tags -->
+<link rel="icon" href="https://i.pinimg.com/736x/f5/6a/b5/f56ab54df5d03334f256d03ef3862bc6.jpg">
+
+<!-- WhatsApp Preview -->
 <meta property="og:title" content="My Forever Valentine ❤️">
-<meta property="og:description" content="Pavan… open this surprise 💌">
-<meta property="og:image" content="https://aviragh812.github.io/valentine/preview.jpg">
+<meta property="og:description" content="A small surprise for you ❤️">
+<meta property="og:image" content="https://i.pinimg.com/736x/46/7f/ff/467fff2c11381655d7225016c3ccd433.jpg">
 <meta property="og:url" content="https://aviragh812.github.io/valentine/">
 <meta property="og:type" content="website">
-<meta name="twitter:card" content="summary_large_image">
 
 <style>
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    text-align: center;
-    background: linear-gradient(135deg, #ff1e56, #ff4d6d);
-    color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+
+body{
+    margin:0;
+    font-family:'Arial Rounded MT Bold', sans-serif;
+    background:linear-gradient(135deg,#ffeef2,#ffd6e0);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:100vh;
+    overflow:hidden;
+    transition:1s;
 }
 
-.container {
-    background: white;
-    color: #333;
-    padding: 30px;
-    border-radius: 20px;
-    width: 90%;
-    max-width: 400px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+/* ---------- ASK CARD ---------- */
+.card{
+    background:white;
+    padding:30px;
+    border-radius:30px;
+    box-shadow:0 15px 40px rgba(255,77,109,.2);
+    width:420px;
+    text-align:center;
 }
 
-h1 {
-    color: #ff1e56;
+#display-img{
+    width:100%;
+    height:420px;
+    object-fit:contain;
+    border-radius:20px;
 }
 
-button {
-    padding: 12px 25px;
-    margin: 10px;
-    border: none;
-    border-radius: 25px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: 0.3s;
+h2{
+    color:#ff4d6d;
+    min-height:60px;
 }
 
-.yes-btn {
-    background-color: #ff1e56;
-    color: white;
+button{
+    padding:15px 30px;
+    font-size:18px;
+    border:none;
+    border-radius:40px;
+    cursor:pointer;
 }
 
-.no-btn {
-    background-color: #ccc;
-    color: black;
-    position: relative;
+#yesBtn{
+    background:#ff4d6d;
+    color:white;
 }
 
-.love-message {
-    font-weight: bold;
-    font-size: 18px;
-    margin-top: 20px;
-    color: #ff1e56;
+#noBtn{
+    background:#9b9b9b;
+    color:white;
+    position:relative;
 }
 
-/* Mobile Styling */
-@media (max-width: 480px) {
-    .love-message {
-        font-size: 20px;
-        padding: 10px;
+.btn-group{
+    margin-top:15px;
+    display:flex;
+    justify-content:center;
+    gap:20px;
+}
+
+/* ---------- FINAL LOVE SCREEN ---------- */
+#finish-section{
+    display:none;
+    text-align:center;
+    animation:fadeIn 1.2s ease;
+}
+
+.love-bg{
+    background:radial-gradient(circle,#ff4d6d,#ff1e56);
+    color:white;
+}
+
+.love-box{
+    background:rgba(255,255,255,0.1);
+    padding:40px;
+    border-radius:30px;
+    backdrop-filter:blur(10px);
+    box-shadow:0 0 40px rgba(255,255,255,0.4);
+}
+
+.love-box h1{
+    font-size:42px;
+    animation:glow 1.5s infinite alternate;
+}
+
+/* LOVE MESSAGE */
+.love-message{
+    font-size:20px;
+    font-weight:bold;
+    margin-top:15px;
+    line-height:1.8;
+    color:#fff;
+    max-width:500px;
+    margin-left:auto;
+    margin-right:auto;
+    text-align:center;
+    text-shadow:0 0 10px rgba(255,255,255,0.6);
+}
+
+@keyframes glow{
+    from{ text-shadow:0 0 10px white; }
+    to{ text-shadow:0 0 30px white; }
+}
+
+.gallery img{
+    width:220px;
+    border-radius:15px;
+    margin:8px;
+}
+
+/* Hearts */
+.heart{
+    position:fixed;
+    top:-10vh;
+    animation:fall linear forwards;
+    font-size:22px;
+}
+@keyframes fall{
+    to{ transform:translateY(110vh) rotate(360deg); }
+}
+
+@keyframes fadeIn{
+    from{opacity:0; transform:scale(.9);}
+    to{opacity:1; transform:scale(1);}
+}
+
+/* ---------- MOBILE ---------- */
+@media (max-width:600px){
+
+    body{
+        padding:15px;
+        overflow:auto;
+    }
+
+    .card{
+        width:100%;
+        padding:20px;
+        border-radius:20px;
+    }
+
+    #display-img{
+        height:300px;
+    }
+
+    h2{
+        font-size:18px;
+    }
+
+    button{
+        padding:12px 20px;
+        font-size:16px;
+    }
+
+    .gallery img{
+        width:140px;
+    }
+
+    .love-box h1{
+        font-size:28px;
+    }
+
+    .love-message{
+        font-size:17px;
+        padding:0 15px;
+        line-height:1.7;
     }
 }
+
 </style>
 </head>
 
 <body>
 
-<div class="container">
-    <h1>Pavan ❤️</h1>
-    <p>It’s been 3 months of us from today 💕</p>
-    <h2>Will you be my Valentine?</h2>
+<div id="ask-section" class="card">
+    <img id="display-img"
+    src="https://i.pinimg.com/736x/46/7f/ff/467fff2c11381655d7225016c3ccd433.jpg">
 
-    <button class="yes-btn" onclick="sayYes()">Yes 💖</button>
-    <button class="no-btn" onmouseover="moveNo()" onclick="noClick()">No 😢</button>
+    <h2 id="statusText">Will you be my Valentine Pavan? ❤️</h2>
 
-    <p class="love-message" id="message"></p>
+    <div class="btn-group">
+        <button id="yesBtn" onclick="accepted()">YES</button>
+        <button id="noBtn" onclick="rejected()">No</button>
+    </div>
+</div>
+
+<div id="finish-section">
+    <div class="love-box">
+        <h1>I LOVE YOU PAVANUUU ❤️</h1>
+
+        <p class="love-message">
+        It’s been 3 months of us from today ❤️ <br>
+        Sorry for today… I always want to be with you Pavan 🥰
+        </p>
+
+        <div class="gallery">
+            <img src="https://i.pinimg.com/736x/ce/af/4f/ceaf4fb81af700dd20563504c0523cfa.jpg">
+            <img src="https://i.pinimg.com/736x/28/5a/cf/285acfc20fdc6098eabce385688c0376.jpg">
+        </div>
+    </div>
 </div>
 
 <script>
-let noCount = 0;
 
-function sayYes() {
-    document.getElementById("message").innerHTML =
-        "Yayyy! I love you so much Pavan ❤️🐰";
-}
+let noCount=0;
+const noBtn=document.getElementById("noBtn");
+const img=document.getElementById("display-img");
+const text=document.getElementById("statusText");
 
-function noClick() {
+function rejected(){
     noCount++;
 
-    if (noCount === 1) {
-        alert("Are you sure? 🥺");
-    } 
-    else if (noCount === 2) {
-        alert("Think again... 😤");
-    } 
-    else {
-        document.body.innerHTML = `
-        <div style="text-align:center; padding:50px;">
-            <img src="https://i.pinimg.com/736x/e1/ef/e1/e1efe1c9baa6995b24ca20766ad81a81.jpg" width="250">
-            <h1 style="color:#ff1e56;">I LOVE YOU ❤️</h1>
-        </div>`;
+    if(noCount===1){
+        img.src="https://i.pinimg.com/originals/82/be/ae/82beaeb21c686871437f88bbc1593288.gif";
+        text.innerText="Are you sure Pavan? 🥺";
+    }
+    else if(noCount===2){
+        img.src="https://i.pinimg.com/originals/99/db/ef/99dbef1b49d0ecf206463c300b0bb16d.gif";
+        text.innerText="Last chance... think again PAVANNNN 😠";
+    }
+    else{
+        img.src="https://i.pinimg.com/736x/e1/ef/e1/e1efe1c9baa6995b24ca20766ad81a81.jpg";
+        text.innerText="NO is not allowed 😡";
+
+        noBtn.onmouseover = moveNo;
+        noBtn.ontouchstart = moveNo;
     }
 }
 
-function moveNo() {
-    if (noCount >= 2) {
-        const btn = document.querySelector(".no-btn");
-        btn.style.position = "absolute";
-        btn.style.top = Math.random() * window.innerHeight + "px";
-        btn.style.left = Math.random() * window.innerWidth + "px";
-    }
+function moveNo(){
+    const x=Math.random()*(window.innerWidth-120);
+    const y=Math.random()*(window.innerHeight-120);
+    noBtn.style.position="fixed";
+    noBtn.style.left=x+"px";
+    noBtn.style.top=y+"px";
 }
+
+function createHeart(){
+    const heart=document.createElement("div");
+    heart.className="heart";
+    heart.innerHTML="❤️";
+    heart.style.left=Math.random()*100+"vw";
+    heart.style.animationDuration=(Math.random()*3+2)+"s";
+    document.body.appendChild(heart);
+    setTimeout(()=>heart.remove(),5000);
+}
+
+function accepted(){
+    document.body.classList.add("love-bg");
+    document.getElementById("ask-section").style.display="none";
+    document.getElementById("finish-section").style.display="block";
+    setInterval(createHeart,150);
+}
+
 </script>
 
 </body>
