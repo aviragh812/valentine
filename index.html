@@ -1,131 +1,174 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>My Forever Valentine ❤️</title>
+    <title>My Forever Valentine ❤️</title>
+    <meta name="title" content="My Forever Valentine ❤️">
+    <meta name="description" content="Pavan… open this surprise 💌">
 
-<!-- WhatsApp Preview Meta Tags -->
-<meta property="og:title" content="My Forever Valentine ❤️">
-<meta property="og:description" content="Pavan… open this surprise 💌">
-<meta property="og:image" content="https://aviragh812.github.io/valentine/preview.jpg">
-<meta property="og:url" content="https://aviragh812.github.io/valentine/">
-<meta property="og:type" content="website">
-<meta name="twitter:card" content="summary_large_image">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://aviragh812.github.io/valentine/">
+    <meta property="og:title" content="My Forever Valentine ❤️">
+    <meta property="og:description" content="Pavan… open this surprise 💌">
+    <meta property="og:image" content="https://aviragh812.github.io/valentine/preview.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
 
-<style>
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    text-align: center;
-    background: linear-gradient(135deg, #ff1e56, #ff4d6d);
-    color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-}
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://aviragh812.github.io/valentine/">
+    <meta property="twitter:title" content="My Forever Valentine ❤️">
+    <meta property="twitter:description" content="Pavan… open this surprise 💌">
+    <meta property="twitter:image" content="https://aviragh812.github.io/valentine/preview.jpg">
 
-.container {
-    background: white;
-    color: #333;
-    padding: 30px;
-    border-radius: 20px;
-    width: 90%;
-    max-width: 400px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-}
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            text-align: center;
+            background: linear-gradient(135deg, #ff1e56, #ff4d6d);
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
 
-h1 {
-    color: #ff1e56;
-}
+        .container {
+            background: white;
+            color: #333;
+            padding: 40px 20px;
+            border-radius: 30px;
+            width: 85%;
+            max-width: 400px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+            z-index: 10;
+            position: relative;
+        }
 
-button {
-    padding: 12px 25px;
-    margin: 10px;
-    border: none;
-    border-radius: 25px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: 0.3s;
-}
+        h1 { color: #ff1e56; margin-bottom: 10px; }
+        h2 { font-size: 1.2rem; margin-bottom: 25px; }
+        p { font-size: 1.1rem; color: #555; }
 
-.yes-btn {
-    background-color: #ff1e56;
-    color: white;
-}
+        .btn-group {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+        }
 
-.no-btn {
-    background-color: #ccc;
-    color: black;
-    position: relative;
-}
+        button {
+            padding: 12px 28px;
+            border: none;
+            border-radius: 50px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.2s, background-color 0.3s;
+        }
 
-.love-message {
-    font-weight: bold;
-    font-size: 18px;
-    margin-top: 20px;
-    color: #ff1e56;
-}
+        .yes-btn {
+            background-color: #ff1e56;
+            color: white;
+        }
 
-/* Mobile Styling */
-@media (max-width: 480px) {
-    .love-message {
-        font-size: 20px;
-        padding: 10px;
-    }
-}
-</style>
+        .yes-btn:hover { transform: scale(1.1); }
+
+        .no-btn {
+            background-color: #eee;
+            color: #555;
+            position: relative;
+        }
+
+        .love-message {
+            font-weight: bold;
+            font-size: 20px;
+            margin-top: 25px;
+            color: #ff1e56;
+            min-height: 30px;
+        }
+
+        /* Heart Animation */
+        .heart {
+            position: absolute;
+            color: #fff;
+            font-size: 20px;
+            top: -20px;
+            user-select: none;
+            pointer-events: none;
+            animation: fall linear forwards;
+        }
+
+        @keyframes fall {
+            to { transform: translateY(105vh) rotate(360deg); }
+        }
+    </style>
 </head>
-
 <body>
 
-<div class="container">
+<div class="container" id="main-card">
     <h1>Pavan ❤️</h1>
     <p>It’s been 3 months of us from today 💕</p>
     <h2>Will you be my Valentine?</h2>
 
-    <button class="yes-btn" onclick="sayYes()">Yes 💖</button>
-    <button class="no-btn" onmouseover="moveNo()" onclick="noClick()">No 😢</button>
+    <div class="btn-group">
+        <button class="yes-btn" onclick="sayYes()">Yes 💖</button>
+        <button class="no-btn" onmouseover="moveNo()" onclick="noClick()">No 😢</button>
+    </div>
 
     <p class="love-message" id="message"></p>
 </div>
 
 <script>
-let noCount = 0;
+    let noCount = 0;
 
-function sayYes() {
-    document.getElementById("message").innerHTML =
-        "Yayyy! I love you so much Pavan ❤️🐰";
-}
-
-function noClick() {
-    noCount++;
-
-    if (noCount === 1) {
-        alert("Are you sure? 🥺");
-    } 
-    else if (noCount === 2) {
-        alert("Think again... 😤");
-    } 
-    else {
-        document.body.innerHTML = `
-        <div style="text-align:center; padding:50px;">
-            <img src="https://i.pinimg.com/736x/e1/ef/e1/e1efe1c9baa6995b24ca20766ad81a81.jpg" width="250">
-            <h1 style="color:#ff1e56;">I LOVE YOU ❤️</h1>
-        </div>`;
+    function createHeart() {
+        const heart = document.createElement("div");
+        heart.classList.add("heart");
+        heart.innerHTML = "❤️";
+        heart.style.left = Math.random() * 100 + "vw";
+        heart.style.animationDuration = Math.random() * 2 + 3 + "s";
+        document.body.appendChild(heart);
+        setTimeout(() => heart.remove(), 5000);
     }
-}
 
-function moveNo() {
-    if (noCount >= 2) {
-        const btn = document.querySelector(".no-btn");
-        btn.style.position = "absolute";
-        btn.style.top = Math.random() * window.innerHeight + "px";
-        btn.style.left = Math.random() * window.innerWidth + "px";
+    function sayYes() {
+        document.getElementById("message").innerHTML = "Yayyy! I love you so much Pavan ❤️🐰";
+        setInterval(createHeart, 300); // Start raining hearts!
+        // Hide the "No" button so they can't change their mind ;)
+        document.querySelector(".no-btn").style.display = "none";
     }
-}
+
+    function noClick() {
+        noCount++;
+        if (noCount === 1) {
+            alert("Are you sure? 🥺");
+        } else if (noCount === 2) {
+            alert("Think again... 😤");
+        } else {
+            // The "Final" Love Screen
+            document.getElementById("main-card").innerHTML = `
+                <img src="https://i.pinimg.com/736x/e1/ef/e1/e1efe1c9baa6995b24ca20766ad81a81.jpg" width="200" style="border-radius:20px;">
+                <h1 style="color:#ff1e56; margin-top:20px;">I KNEW IT! ❤️</h1>
+                <p>I LOVE YOU FOREVER!</p>
+            `;
+            setInterval(createHeart, 200);
+        }
+    }
+
+    function moveNo() {
+        if (noCount >= 2) {
+            const btn = document.querySelector(".no-btn");
+            // Keep button inside visible screen
+            const x = Math.random() * (window.innerWidth - btn.offsetWidth);
+            const y = Math.random() * (window.innerHeight - btn.offsetHeight);
+            btn.style.position = "fixed";
+            btn.style.left = x + "px";
+            btn.style.top = y + "px";
+        }
+    }
 </script>
 
 </body>
